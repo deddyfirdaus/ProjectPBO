@@ -27,17 +27,31 @@ public class Formulirpndftran2 extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        next = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/fp2copy.jpg"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 451));
+        next.setBorderPainted(false);
+        next.setContentAreaFilled(false);
+        next.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nextActionPerformed(evt);
+            }
+        });
+        add(next, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 310, 110, 40));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/Revisi New Born 6.jpg"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nextActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton next;
     // End of variables declaration//GEN-END:variables
 }

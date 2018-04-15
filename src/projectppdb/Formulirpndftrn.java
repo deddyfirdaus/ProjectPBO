@@ -35,7 +35,7 @@ public class Formulirpndftrn extends javax.swing.JPanel {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1280, 451));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -47,12 +47,10 @@ public class Formulirpndftrn extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 390, 130, 50));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 360, 110, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/fp1copy.jpg"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        jLabel1.setPreferredSize(new java.awt.Dimension(1280, 451));
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/Revisi New Born 5.jpg"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -62,6 +60,6 @@ public class Formulirpndftrn extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
