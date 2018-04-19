@@ -5,6 +5,8 @@
  */
 package projectppdb;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Deddy
@@ -14,8 +16,18 @@ public class Formulirpndftran2 extends javax.swing.JPanel {
     /**
      * Creates new form Formulirpndftran2
      */
+    
+    
+    
     public Formulirpndftran2() {
         initComponents();
+    }
+     public void addNextListener(ActionListener a) {
+        next.addActionListener(a);
+    }
+     
+      public void addBackListener(ActionListener b) {
+        back.addActionListener(b);
     }
 
     /**
@@ -28,6 +40,7 @@ public class Formulirpndftran2 extends javax.swing.JPanel {
     private void initComponents() {
 
         next = new javax.swing.JButton();
+        back = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -41,16 +54,30 @@ public class Formulirpndftran2 extends javax.swing.JPanel {
         });
         add(next, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 310, 110, 40));
 
+        back.setBorderPainted(false);
+        back.setContentAreaFilled(false);
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backActionPerformed(evt);
+            }
+        });
+        add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 370, 110, 40));
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/Revisi New Born 6.jpg"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 430));
     }// </editor-fold>//GEN-END:initComponents
 
     private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nextActionPerformed
 
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_backActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton back;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JButton next;
     // End of variables declaration//GEN-END:variables

@@ -23,6 +23,8 @@ public class MenuSiswa extends javax.swing.JFrame {
     Daftar d;
     Formulirpndftrn fp1;
     Formulirpndftran2 fp2;
+    Formulirpndftrn3 fp3;
+    Biodataa b;
     Pengumuman p;
 
     /**
@@ -38,7 +40,16 @@ public class MenuSiswa extends javax.swing.JFrame {
         d = new Daftar();
         fp1 = new Formulirpndftrn();
         fp2 = new Formulirpndftran2();
+        fp3 = new Formulirpndftrn3();
+        b = new Biodataa();
         fp1.addNextListener(new nextListener());
+        fp2.addNextListener(new nextfp2Listener());
+        fp2.addBackListener(new backListener());
+        fp3.addBackListener(new backfp3Listener());
+        fp3.addSaveListener(new saveListener());
+        b.addEditListener(new editListener());
+        
+        
 
         Panelan.setLayout(layout);
         Panelan.add(j);
@@ -48,6 +59,9 @@ public class MenuSiswa extends javax.swing.JFrame {
         Panelan.add(p);
         Panelan.add(fp1);
         Panelan.add(fp2);
+        Panelan.add(fp3);
+        Panelan.add(b);
+               
 
         l.setVisible(true);
         j.setVisible(false);
@@ -56,6 +70,8 @@ public class MenuSiswa extends javax.swing.JFrame {
         fp1.setVisible(false);
         fp2.setVisible(false);
         p.setVisible(false);
+        fp3.setVisible(false);
+        b.setVisible(false);
 
     }
 
@@ -65,6 +81,54 @@ public class MenuSiswa extends javax.swing.JFrame {
         public void actionPerformed(ActionEvent ae) {
             fp2.setVisible(true);
             fp1.setVisible(false);
+        }
+
+    }
+    private class backListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            fp2.setVisible(false);
+            fp1.setVisible(true);
+        }
+
+    }
+    
+    private class nextfp2Listener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            fp3.setVisible(true);
+            fp2.setVisible(false);
+        }
+
+    }
+    
+    private class backfp3Listener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            fp2.setVisible(true);
+            fp3.setVisible(false);
+        }
+
+    }
+    private class saveListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            fp3.setVisible(false);
+            b.setVisible(true);
+        }
+
+    }
+    
+    private class editListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            b.setVisible(false);
+            fp1.setVisible(true);
         }
 
     }
@@ -84,11 +148,11 @@ public class MenuSiswa extends javax.swing.JFrame {
         login = new javax.swing.JButton();
         Dftr = new javax.swing.JButton();
         Pngmn = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         Panelan = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         fp.setBorderPainted(false);
@@ -147,6 +211,15 @@ public class MenuSiswa extends javax.swing.JFrame {
         });
         getContentPane().add(Pngmn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 240, 160, 50));
 
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 160, 140));
+
         javax.swing.GroupLayout PanelanLayout = new javax.swing.GroupLayout(Panelan);
         Panelan.setLayout(PanelanLayout);
         PanelanLayout.setHorizontalGroup(
@@ -175,6 +248,8 @@ public class MenuSiswa extends javax.swing.JFrame {
         fp2.setVisible(false);
         p.setVisible(false);
         p.setVisible(false);
+        fp3.setVisible(false);
+        b.setVisible(false);
     }//GEN-LAST:event_jdwlActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
@@ -185,6 +260,8 @@ public class MenuSiswa extends javax.swing.JFrame {
         fp1.setVisible(false);
         fp2.setVisible(false);
         p.setVisible(false);
+        fp3.setVisible(false);
+        b.setVisible(false);
     }//GEN-LAST:event_loginActionPerformed
 
     private void ckpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckpActionPerformed
@@ -195,6 +272,8 @@ public class MenuSiswa extends javax.swing.JFrame {
         fp1.setVisible(false);
         fp2.setVisible(false);
         p.setVisible(false);
+        fp3.setVisible(false);
+        b.setVisible(false);
     }//GEN-LAST:event_ckpActionPerformed
 
     private void fpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fpActionPerformed
@@ -205,6 +284,8 @@ public class MenuSiswa extends javax.swing.JFrame {
         l.setVisible(false);
         fp2.setVisible(false);
         p.setVisible(false);
+        fp3.setVisible(false);
+        b.setVisible(false);
     }//GEN-LAST:event_fpActionPerformed
 
     private void DftrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DftrActionPerformed
@@ -215,6 +296,8 @@ public class MenuSiswa extends javax.swing.JFrame {
         fp1.setVisible(false);
         fp2.setVisible(false);
         p.setVisible(false);
+        fp3.setVisible(false);
+        b.setVisible(false);
     }//GEN-LAST:event_DftrActionPerformed
 
     private void PngmnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PngmnActionPerformed
@@ -225,7 +308,14 @@ public class MenuSiswa extends javax.swing.JFrame {
         fp1.setVisible(false);
         fp2.setVisible(false);
         p.setVisible(true);
+        fp3.setVisible(false);
+        b.setVisible(false);
     }//GEN-LAST:event_PngmnActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        new Home().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -269,6 +359,7 @@ public class MenuSiswa extends javax.swing.JFrame {
     private javax.swing.JButton Pngmn;
     private javax.swing.JButton ckp;
     private javax.swing.JButton fp;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JButton jdwl;
     private javax.swing.JButton login;

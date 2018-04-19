@@ -5,17 +5,99 @@
  */
 package projectppdb;
 
+import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Deddy
  */
 public class MenuAdmin extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MenuAdmin
-     */
+    GridBagLayout layout = new GridBagLayout();
+    Daftaraknsiswa daks;
+    Daftarsiswaa das;
+    Daftarsiswaa2 das2;
+    Daftarsiswa3 das3;
+    Dataruangnts dat;
+    Datasswayglls dsl;
+    inputdftrsiswayglls idsl;
+    Loginadm la;
+
     public MenuAdmin() {
         initComponents();
+        setLocationRelativeTo(this);
+        daks = new Daftaraknsiswa();
+        das = new Daftarsiswaa();
+        das2 = new Daftarsiswaa2();
+        das3 = new Daftarsiswa3();
+        dat = new Dataruangnts();
+        dsl = new Datasswayglls();
+        idsl = new inputdftrsiswayglls();
+        la = new Loginadm();
+        das.addNextListener(new nextListener());
+        das2.addNextListener(new nextdas2Listener());
+        dsl.addInputListener(new inputListener());
+        
+        
+
+        Panelan.setLayout(layout);
+        Panelan.add(daks);
+        Panelan.add(das);
+        Panelan.add(das2);
+        Panelan.add(das3);
+        Panelan.add(dat);
+        Panelan.add(idsl);
+        Panelan.add(la);
+        Panelan.add(dsl);
+
+        la.setVisible(true);
+        das.setVisible(false);
+        das2.setVisible(false);
+        das3.setVisible(false);
+        dat.setVisible(false);
+        idsl.setVisible(false);
+        daks.setVisible(false);
+        dsl.setVisible(false);
+
+    }
+    
+    private class nextListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            das.setVisible(false);
+            das2.setVisible(true);
+        }
+
+    }
+    private class nextdas2Listener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            das3.setVisible(true);
+            das2.setVisible(false);
+        }
+
+    }
+     private class nextdas3Listener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            das3.setVisible(true);
+            das2.setVisible(false);
+        }
+
+    }
+     private class inputListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            dsl.setVisible(false);
+            idsl.setVisible(true);
+        }
+
     }
 
     /**
@@ -27,37 +109,137 @@ public class MenuAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        dftraknssw = new javax.swing.JButton();
+        dtsswa = new javax.swing.JButton();
+        dtsswayglls = new javax.swing.JButton();
+        dtrngnts = new javax.swing.JButton();
+        Panelan = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        login = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("Daftar Siswa");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        dftraknssw.setBorderPainted(false);
+        dftraknssw.setContentAreaFilled(false);
+        dftraknssw.setDefaultCapable(false);
+        dftraknssw.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                dftraknsswActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
+        getContentPane().add(dftraknssw, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 220, 50));
 
-        jButton2.setText("Cetak Absen");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, -1, -1));
+        dtsswa.setBorderPainted(false);
+        dtsswa.setContentAreaFilled(false);
+        dtsswa.setDefaultCapable(false);
+        dtsswa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dtsswaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(dtsswa, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, 120, 50));
 
-        jButton3.setText("Daftar Siswa lolos");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, -1, -1));
+        dtsswayglls.setBorderPainted(false);
+        dtsswayglls.setContentAreaFilled(false);
+        dtsswayglls.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dtsswaygllsActionPerformed(evt);
+            }
+        });
+        getContentPane().add(dtsswayglls, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 240, 250, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/piliha login.jpeg"))); // NOI18N
+        dtrngnts.setBorderPainted(false);
+        dtrngnts.setContentAreaFilled(false);
+        dtrngnts.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dtrngntsActionPerformed(evt);
+            }
+        });
+        getContentPane().add(dtrngnts, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 240, 200, 50));
+
+        javax.swing.GroupLayout PanelanLayout = new javax.swing.GroupLayout(Panelan);
+        Panelan.setLayout(PanelanLayout);
+        PanelanLayout.setHorizontalGroup(
+            PanelanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1280, Short.MAX_VALUE)
+        );
+        PanelanLayout.setVerticalGroup(
+            PanelanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 430, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(Panelan, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 1280, 430));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/Admin Revisi .jpeg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        login.setBorderPainted(false);
+        login.setContentAreaFilled(false);
+        login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginActionPerformed(evt);
+            }
+        });
+        getContentPane().add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 240, 70, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void dftraknsswActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dftraknsswActionPerformed
+        la.setVisible(false);
+        das.setVisible(false);
+        das2.setVisible(false);
+        das3.setVisible(false);
+        dat.setVisible(false);
+        idsl.setVisible(false);
+        daks.setVisible(true);
+        dsl.setVisible(false);
+    }//GEN-LAST:event_dftraknsswActionPerformed
+
+    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
+        la.setVisible(true);
+        das.setVisible(false);
+        das2.setVisible(false);
+        das3.setVisible(false);
+        dat.setVisible(false);
+        idsl.setVisible(false);
+        daks.setVisible(false);
+        dsl.setVisible(false);
+    }//GEN-LAST:event_loginActionPerformed
+
+    private void dtsswaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dtsswaActionPerformed
+        la.setVisible(false);
+        das.setVisible(true);
+        das2.setVisible(false);
+        das3.setVisible(false);
+        dat.setVisible(false);
+        idsl.setVisible(false);
+        daks.setVisible(false);
+        dsl.setVisible(false);
+    }//GEN-LAST:event_dtsswaActionPerformed
+
+    private void dtsswaygllsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dtsswaygllsActionPerformed
+        la.setVisible(false);
+        das.setVisible(false);
+        das2.setVisible(false);
+        das3.setVisible(false);
+        dat.setVisible(false);
+        idsl.setVisible(false);
+        daks.setVisible(false);
+        dsl.setVisible(true);
+    }//GEN-LAST:event_dtsswaygllsActionPerformed
+
+    private void dtrngntsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dtrngntsActionPerformed
+        la.setVisible(false);
+        das.setVisible(false);
+        das2.setVisible(false);
+        das3.setVisible(false);
+        dat.setVisible(true);
+        idsl.setVisible(false);
+        daks.setVisible(false);
+        dsl.setVisible(false);
+    }//GEN-LAST:event_dtrngntsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -95,9 +277,12 @@ public class MenuAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JPanel Panelan;
+    private javax.swing.JButton dftraknssw;
+    private javax.swing.JButton dtrngnts;
+    private javax.swing.JButton dtsswa;
+    private javax.swing.JButton dtsswayglls;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton login;
     // End of variables declaration//GEN-END:variables
 }
